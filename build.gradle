@@ -1,0 +1,27 @@
+plugins {
+    id "java"
+    id "org.pkl-lang" version "0.26.2"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(22)
+    }
+}
+
+pkl {
+    javaCodeGenerators {
+        register("genJava") {
+            generateGetters = true
+            sourceModules.add(file("sample.pkl"))
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.pkl-lang:pkl-config-java:0.26.2")
+}

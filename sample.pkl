@@ -1,0 +1,8 @@
+@ModuleInfo { minPklVersion = "0.26.2" }
+module test.sample
+
+message = "Hi!"
+
+class Foo {
+  thing: String
+}
